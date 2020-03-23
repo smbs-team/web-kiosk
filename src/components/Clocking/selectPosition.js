@@ -11,6 +11,12 @@ import PropTypes from 'prop-types';
 
 const CLOCKIN = 30570;
 
+/**
+ *
+ *
+ * @class SelectPosition
+ * @extends {Component}
+ */
 class SelectPosition extends Component{
     constructor(props){
         super(props);
@@ -21,6 +27,10 @@ class SelectPosition extends Component{
         }
     }    
 
+    /**
+     * @param {object} photo
+     * @memberof SelectPosition
+     */
     handlePhotoTaken = async photo => {
         const { Location: photoURL } = await uploadS3(photo);
         this.props.handleMarking(CLOCKIN, this.state.positionId, photoURL);
