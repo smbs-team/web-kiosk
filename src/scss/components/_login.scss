@@ -1,0 +1,72 @@
+.Login{ 	
+	background-color: $login-bg;
+	
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+	min-height: 100vh;	
+	
+	&-form{
+		background-color: map-get($map: $gray-shades, $key: form-bg);
+		color: map-get($map: $gray-shades, $key: form-color);		
+		font-size: 13px;
+
+		margin: 0 auto;
+		padding: 35px 28px;	
+
+		position: relative;
+
+		max-width: 350px;
+		width: 100%;
+	}
+
+	&-avatar{
+		background-color: $kiosk-aqua;
+		border: 1px solid $white;
+		border-radius: 50%;
+
+		height: 95px;
+		width: 95px;
+
+		margin: 0 auto;
+		padding: 15px;
+
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -50px;
+	}
+
+	&-input{
+		margin-bottom: 16px;
+		border: 1px solid $black;
+		border-radius: 8px;
+	}
+
+	&-submit{
+		background-color: $login-bg;
+		border-color: $login-bg;
+		font-size: 18px;
+		font-weight: 700;
+		height: 40px;
+	}
+
+	&-title{
+		font-size: 22px;
+		margin-bottom: 25px;
+		margin-top: 35px;
+	}
+
+	&-options{
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	&-remember{
+		margin-bottom: 0;
+	}
+}

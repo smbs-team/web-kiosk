@@ -1,0 +1,10 @@
+@import './vendor/vendor';
+@import './base/variables';
+@import './mixins/mixins';
+
+//Common styles
+@import './base/common';
+
+//Components
+@import './components/login';
+@import './components/kiosk';

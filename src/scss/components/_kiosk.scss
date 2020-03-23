@@ -1,0 +1,409 @@
+.Kiosk{
+    background-color: $white;
+
+	display: flex;
+    
+	align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;    
+    
+    font-weight: 400;
+
+    height: 100vh;    
+    width: 100%;
+
+    &-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+        
+    &-button{
+        border-radius: 5px;
+        color: $white;
+        display: block;
+        font-size: 16px;
+
+        margin: 15px 0;
+        padding-bottom: 10px;
+        padding-top: 10px;
+
+        width: 200px;
+
+        &.clock-in{
+            background: linear-gradient(90deg, rgba(38,169,89,1) 35%, rgba(61,215,41,1) 100%);
+        }
+        &.clock-out{
+            background: linear-gradient(90deg, rgba(232,46,46,1) 35%, rgba(224,7,57,1) 100%);
+        }
+        &.break-in{
+            background: linear-gradient(90deg, rgba(255,81,28,1) 35%, rgba(240,143,11,1) 100%);
+        }
+        &.break-out{
+            background: linear-gradient(90deg, rgba(243,141,5,1) 35%, rgba(255,82,26,1) 100%);
+        }
+    }
+
+    &-logout{
+        background-color: $white;
+        border-radius: 5px;
+        color: $kiosk-blue;
+
+        display: block;
+        margin: 0 auto;
+
+        font-size: 16px;
+        text-align: center;
+
+        padding: 8px 8px;
+        width: 165px;
+    }
+
+    &-container{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 100% !important;
+        .row {
+            height: 100%;
+        }
+    }
+
+    &-dateTime{
+        max-width: 310px;
+    }
+
+    &-date, &-time{
+        display: block;
+        font-size: 34px;
+        text-align: center;
+    }
+
+    &-pinContainer {
+        height: 100vh;
+        overflow-y: scroll;
+        position: relative;
+    }
+
+    &-pinInput {
+        border: 0;
+        background: rgba($white,0.2);
+        color: $white;
+        font-size: 100px;
+        height: 55px;
+        max-width: 200px;
+        margin: 0 auto;
+        padding: 5px;
+        pointer-events: none;
+        width: 100%;
+        &:focus {
+            background-color: rgba($white,0.2);
+        }
+    }
+
+    &-pinButtonsContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0 auto;
+        max-width: 300px;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        width: 100%;
+    }
+
+    &-pinButtonNumber {
+        background-color: rgba($white,0.4);
+        border-radius: 80px;
+        border: 0;
+        color: $white;
+        flex: none;
+        font-size: 1.5rem;
+        font-weight: 700;
+        height: 80px;
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        width: 80px;
+        &:active, &:focus {
+            outline: 0;
+        }
+    }
+
+    &-time{
+        font-size: 60px;
+    }
+
+    &-punchModal {
+        div[class^="MuiDialogTitle"]{
+            position: relative;
+        }
+    }
+
+    &-gradient{
+        background: linear-gradient(180deg, $kiosk-aqua 20%, $kiosk-blue 100%);
+    }
+
+    &-modalClose {
+        cursor: pointer;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+
+        text-align: center;
+
+        height: 32px;
+        width: 32px;
+
+        &:hover{
+            background-color: $red;
+            transition: background-color 0.35s ease;
+        }
+    }
+
+    &-header{
+        background-color: $kiosk-aqua;
+        padding: 2rem 0.75rem;
+
+        &::after{
+            content: '';
+            display: none;
+        }
+    }
+
+    &-list{
+        border-radius: 0;
+        height: 100vh;        
+        margin: 0;    
+
+        .card-body{
+            height: calc(100vh - 100px);
+            overflow-y: scroll;
+        }
+    }
+
+    &-users {
+        list-style: none;        
+        padding: 0;
+    }
+    
+    &-user {
+        border-bottom: 1px solid $second-light-gray;
+        cursor: pointer;
+        padding: 18px 15px;
+        transition: background-color 0.35s ease;
+
+        &:hover{
+            background-color: $brand-primary;
+        }
+        
+        &:last-child{
+            border-bottom: none;
+        }
+
+        &-name{
+            font-size: 16px;
+            text-transform: capitalize;
+            white-space: nowrap;
+        }
+        
+        &-pic{
+            background-color: $second-light-gray;
+            border: 2px solid $second-light-gray;
+            border-radius: 50%;
+
+            margin-right: 1rem;
+
+            height: 72px;            
+            width: 72px;
+        }        
+    }
+
+    &-userInfo {
+        align-items: center;
+        display: flex;
+        color: $white;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        text-align: center;
+        &-pic {
+            border-radius: 180px;
+            height: 180px;
+            width: 180px;
+        }
+        &-subtitle {
+            margin-bottom: 1rem;
+        }
+        &-title {
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &-marking{
+        background-color: $white;
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        width: 100vw;
+        z-index: 1049;
+
+        &-wrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        &-options{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;            
+            justify-content: space-around;
+
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        &.visible{
+            display: block;
+        }
+
+        &-left{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-wrap: nowrap;
+            justify-content: space-between;            
+
+            height: 100vh;
+
+            padding: 25px 0px;
+        }     
+        
+        &-right{
+            padding: 60px 40px;
+        }
+
+        &-title{
+            display: block;
+            font-size: 34px;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &-profilePic{
+        border: 1px solid $white;
+        border-radius: 50%;
+        display: block;
+
+        margin: 0;
+        margin-bottom: 30px;
+        object-fit: cover;
+
+        height: 200px;
+        width: 200px;
+    }
+
+    &-profileName{
+        color: $white;
+        display: block;
+        font-size: 32px;
+        font-weight: 600;;
+        text-align: center;
+    }
+
+    &-position{
+        &Button{
+            background-color: $white;
+            border: 1px solid $black;
+            
+            font-size: 18px;
+
+            height: 60px;
+            width: 250px;
+
+            margin-bottom: 25px;
+
+            padding-left: 15px;
+            padding-right: 15px;
+
+            :hover{
+                background-color: darken($color: $white, $amount: 75%);
+                transition: background-color 0.35s ease;
+            }
+
+            i{
+                color: $info;
+            }
+        }
+    }
+
+    &-text{
+        color: $white;
+        font-size: 20px;
+        font-weight: 600;;
+    }
+
+    @include media-breakpoint-down(lg){
+        &-pinButtonsContainer{
+            max-width: 230px;            
+        }
+
+        &-pinButtonNumber{
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+    @include media-breakpoint-down(md){
+        &-user{
+            &-pic{
+                height: 36px;            
+                width: 36px;
+            }
+
+            &-name{
+                font-size: 13px;
+            }
+        }        
+    }
+    
+    @include media-breakpoint-down(sm){
+        &-marking{
+            &-left{
+                height: auto;
+            }
+    
+            &-right{
+                padding-bottom: 20px;
+                padding-top: 20px;
+            }
+        }
+
+        &-left{
+            display: none;
+        }
+
+        &-list{
+            .card-body{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }        
+    }
+}
+
+.PhotoModal{
+    max-width: 334px;    
+}
